@@ -1,63 +1,61 @@
 #config_version=5
 
+
 hardware:
     platform: fast
     driverboards: fast
 
 fast:
-  ports: com4, com5
+  ports: /dev/cu.usbserial-00203114B, /dev/cu.usbserial-00203114C
   watchdog: 500
 
 
 
 switches:
   s_sling:
-    number: 0-0
+    number: 1-0
     tags: 
-  s_pop_down:
-    number: 0-5
-    tags: pop_down
-  s_pop_left:
-    number: 0-6
-    tags: pop_left
-  s_pop_right:
-    number: 0-7
-    tags: pop_right
+  # s_pop_down:
+  #   number: 0-5
+  #   tags: pop_down
+  # s_pop_left:
+  #   number: 0-6
+  #   tags: pop_left
+  # s_pop_right:
+  #   number: 0-7
+  #   tags: pop_right
 
 coils:
   c_sling:
-      number: 0-0
+      number: 1-0
       default_pulse_ms: 30
       default_pulse_power: 0.7
-  c_pop_down:
-      number: 0-1
-      default_pulse_ms: 30
-      default_pulse_power: 0.5
-  c_pop_left:
-      number: 0-2
-      default_pulse_ms: 30
-      default_pulse_power: 0.5
-  c_pop_right:
-      number: 0-3
-      default_pulse_ms: 30
-      default_pulse_power: 0.5
+  # c_pop_down:
+  #     number: 0-1
+  #     default_pulse_ms: 30
+  #     default_pulse_power: 0.5
+  # c_pop_left:
+  #     number: 0-2
+  #     default_pulse_ms: 30
+  #     default_pulse_power: 0.5
+  # c_pop_right:
+  #     number: 0-3
+  #     default_pulse_ms: 30
+  #     default_pulse_power: 0.5
 
-autofire_coils:
-  ac_popbumper_down:
-    coil: c_pop_down
-    switch: s_pop_down
-  ac_popbumper_left:
-    coil: c_pop_down
-    switch: s_pop_down
-  ac_popbumper_right:
-    coil: c_pop_down
-    switch: s_pop_down
-  ac_slingshot_left:
-    coil: c_sling
-    switch: s_sling
+# autofire_coils:
+#   ac_popbumper_down:
+#     coil: c_pop_down
+#     switch: s_pop_down
+#   ac_popbumper_left:
+#     coil: c_pop_down
+#     switch: s_pop_down
+#   ac_popbumper_right:
+#     coil: c_pop_down
+#     switch: s_pop_down
+#   ac_slingshot_left:
+#     coil: c_sling
+#     switch: s_sling
 
-playfields:
-  playfield:
-    tags: default
-    default_source_device: None  # use None in steps before 8
+
 
