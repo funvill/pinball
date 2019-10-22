@@ -6,14 +6,18 @@ hardware:
     driverboards: fast
 
 fast:
-  ports: /dev/cu.usbserial-00203114B, /dev/cu.usbserial-00203114C
-  watchdog: 500
+  ports: com6, com5
+  watchdog: 0
+#  debug: true
 
-
+playfields:
+    playfield:
+        tags: default
+        default_source_device: None  # use None in steps before 8
 
 switches:
   s_sling:
-    number: 1-0
+    number: 0-0
     tags: 
   # s_pop_down:
   #   number: 0-5
@@ -27,7 +31,7 @@ switches:
 
 coils:
   c_sling:
-      number: 1-0
+      number: 0-0
       default_pulse_ms: 30
       default_pulse_power: 0.7
   # c_pop_down:
@@ -43,7 +47,7 @@ coils:
   #     default_pulse_ms: 30
   #     default_pulse_power: 0.5
 
-# autofire_coils:
+autofire_coils:
 #   ac_popbumper_down:
 #     coil: c_pop_down
 #     switch: s_pop_down
@@ -53,9 +57,10 @@ coils:
 #   ac_popbumper_right:
 #     coil: c_pop_down
 #     switch: s_pop_down
-#   ac_slingshot_left:
-#     coil: c_sling
-#     switch: s_sling
+  ac_slingshot:
+    enable_events: machine_reset_phase_3
+    coil: c_sling
+    switch: s_sling
 
 
 
